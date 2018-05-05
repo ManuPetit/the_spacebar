@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Read {{ title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    <div>
+        <p>Baconipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque nisi urna, non sodales sem porta
+            sed. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce
+            egestas
+            dolor lacus. Sed non pulvinar massa. Duis blandit erat neque, in egestas sem posuere nont</p>
+        <p>Meat balls duis facilisis varius lacinia. Aenean aliquet leo nec dui viverra, quis ornare risus interdum.
+            Nunc
+            varius porta lorem, eget viverra lectus mattis facilisis.</p>
+        <p>Pastramiui felis, aliquet in sem sed, volutpat pharetra nunc. Maecenas scelerisque porta metus, eu rhoncus
+            lectus
+            condimentum sit amet. Proin fermentum tempus nibh et porta. Phasellus maximus quam sed turpis auctor, ac
+            varius
+            ligula sagittis. Quisque id metus massa.</p>
+    </div>
+    <h2>Comments ({{ comments|length }})</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
