@@ -16,15 +16,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="app_homepage")
      */
     public function homepage()
     {
-        return new Response('OMG !!! My first page already ! Wooo Woo !');
+        return $this->render('article/homepage.html.twig');
     }
 
     /**
-     * @Route("/news/{slug}")
+     * @Route("/news/{slug}", name="article_show")
      */
     public function show($slug)
     {
@@ -33,6 +33,7 @@ class ArticleController extends AbstractController
             'The the useful says macro a Stallman\'s chart course attention.',
             'Seven a him" hobby but "It he make if system.',
         ];
+
         return $this->render('article/show.html.twig', [
             'title' => ucwords(str_replace('-', ' ', $slug)),
             'comments' => $comments,
